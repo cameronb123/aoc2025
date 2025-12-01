@@ -13,28 +13,21 @@ def solution(file: Path) -> tuple[int, int]:
     for rotation in input_values:
         direction = rotation[0]
         distance = int(rotation[1:])
-        # print(f"current: {current}, rotation: {rotation}")
 
-        n_passes = math.floor(distance / 100)
+        zero_pass_count += math.floor(distance / 100)
         remainder = distance % 100
 
         if direction == "L":
             if 0 < current <= remainder:
-                n_passes += 1
-            zero_pass_count += n_passes
+                zero_pass_count += 1
             current = (current - distance) % 100
-            # zero_pass_count += math.floor((current - distance) / 100)
         else:
             if current >= 100 - remainder:
-                n_passes += 1
-            zero_pass_count += n_passes
+                zero_pass_count += 1
             current = (current + distance) % 100
-            # zero_pass_count += math.floor((current + distance) / 100)
 
         if current == 0:
             zero_count += 1
-
-        # print(f"zero_pass_count: {zero_pass_count}, zero_count: {zero_count}")
 
     return zero_count, zero_pass_count
 
