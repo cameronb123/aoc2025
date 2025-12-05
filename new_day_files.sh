@@ -10,10 +10,10 @@ directory_name="${padded_number}"
 mkdir "$directory_name"
 
 # Copy the template.py to the new directory as dayX.py
-cp template.py "$directory_name/day${number}.py"
+cp template.py "$directory_name/day${padded_number}.py"
 
 # Create input.txt and test.txt
 touch "$directory_name/input.txt"
 touch "$directory_name/test.txt"
 
-echo "Directory '$directory_name' created with day${number}.py, input.txt, and test.txt."
+echo "Directory '$directory_name' created with day${padded_number}.py, input.txt, and test.txt."
