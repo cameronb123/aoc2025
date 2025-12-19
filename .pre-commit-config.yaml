@@ -8,10 +8,8 @@ repos:
       # Run the linter.
       - id: ruff
         args: [ --fix ]
-        files: ^(airflow|common)/.*$
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.15.0
     hooks:
       - id: mypy
         language: system
-        files: ^(airflow|common)/.*\.py$
